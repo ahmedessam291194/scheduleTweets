@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     this.auth.getAccessTokenSilently().subscribe(token => {
       let httpHeaders = new HttpHeaders();
-      httpHeaders.set("Authorization", "Bearer AAAAAAAAAAAAAAAAAAAAACeBfAEAAAAAOeGYthgEL1mOaP5Qcw3fKbzDYhI%3DVIOTnxwHGXZLEz5cDmU2vZESv8kH2ZChXbRYJ9sjLfWg1Efad6");
+      httpHeaders.set("Authorization", "Bearer " + token);
 
       this._HttpClient.get("https://api.twitter.com/2/tweets/search/recent?query=saw", {
 
